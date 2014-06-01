@@ -27,16 +27,18 @@ Comb is a framework use to simply develop threads program.
 
 
 
-## Howto
+## Howto use comb
+
 ### Create Slot
 
 you can find the demo at : comb/demo/*.py
 
+I will write document as soon as possible.
+
 ### Run
 
-	git clone git@github.com:kbonez/comb.git
-	cd comb
-	sudo python setup.py install
+	cd YOUR-SLOT-SAVE-PATH
+	comb slot-package.slot-module
 
 
 
