@@ -1,12 +1,15 @@
 Comb
 ============
 
+
 Comb is a framework use to simply develop threads program.
+
 
 
 ## INSTALL
 
 ### DEPENDS
+
 
 - Python2.7(We didn't test on other version.If you work it on other version success,let me know)
 - [Optional] 
@@ -31,8 +34,14 @@ you can find the demo at : comb/demo/*.py
 
 ### Run
 
-	cd slot-path && comb garbage.clean
+	git clone git@github.com:kbonez/comb.git
+	cd comb
+	sudo python setup.py install
 
+
+
+## Developer
+[Breeze.Kay](mailto:wangwenpei@kbonez.com)
 
 ## Planning-Featrue
 
@@ -44,6 +53,7 @@ you can find the demo at : comb/demo/*.py
 
 ## LICENSE
 We use [MIT](http://opensource.org/licenses/MIT) License.
+
 
 
 
