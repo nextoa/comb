@@ -32,7 +32,7 @@ Mongo or Redis or Mysql
 [Breeze.Kay](mailto:wangwenpei@kbonez.com)
 
 ## LICENSE
-遵循MIT协议
+[MIT](http://opensource.org/licenses/MIT)
 
 
 
