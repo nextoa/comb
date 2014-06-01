@@ -11,7 +11,7 @@ Comb is a framework use to simply develop threads program.
 ### DEPENDS
 
 
-- Python2.7(We didn't test on other version.If you work it on other version success,let me know)
+- Python2.7(I haven't test on other version.If you work it on other version success,let me know)
 - [Optional] 
 	- Mongo
 	- Redis(Plan)
@@ -19,7 +19,7 @@ Comb is a framework use to simply develop threads program.
 
 
 
-### Install use git
+### Install from source
 
 	git clone git@github.com:kbonez/comb.git
 	cd comb
