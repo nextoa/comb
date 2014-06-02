@@ -47,6 +47,9 @@ I will write document as soon as possible.
 	export SLOTPATH && comb slot-package.slot-module
 		 
 
+## Feature Plan
+- document for demo
+- catch KeyboardInterrupt
 
 
 ## Developer
