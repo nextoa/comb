@@ -8,7 +8,7 @@ import importlib
 def useage():
     print "Useage", os.path.basename(sys.argv[0]), ''' [--root packages-root] [touch] slot-package.slot-module
 
-    slot-package.slot-module        same as python package.module
+    slot-package.slot-module        same as python package.module.@note:this must be last argument.
 
     Global:
     --root                          find package.module in root path,it will search SLOTPATH first
@@ -27,6 +27,7 @@ if '--debug' in sys.argv:
 
 runtime_path=user_path=None
 
+root_pos = -1
 try:
     root_pos = sys.argv.index('--root')
     runtime_path = sys.argv[root_pos+1] if root_pos+1 < sys.argv.__len__()-1 else None
@@ -44,9 +45,12 @@ except:
 
 module_name = sys.argv[-1]
 
-if sys.argv.__len__() < 2 or module_name[:1] == '-':
+if sys.argv.__len__() < 2 or module_name[:1] == '-' or root_pos+1 == sys.argv.__len__()-1:
     print "illegal option,use -h to get help."
     sys.exit(0)
+
+
+print module_name
 
 try:
     current_module = importlib.import_module(module_name)

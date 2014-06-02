@@ -16,6 +16,8 @@ signal.signal(signal.SIGINT, signal_handle)
 
 def worker(iterator):
     time = iterator.sleep
+    # iterator.beforePoll()
+
     while True:
         with iterator as result:
             if result is not False:

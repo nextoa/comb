@@ -7,12 +7,29 @@ from pymongo import MongoClient
 
 
 class Slot(comb.slot.Slot):
-    def __init__(self, combd):
-        super(self.__class__, self).__init__(combd)
+    def initialize(self):
+        """Hook for subclass initialization.
+
+        This block is execute before thread initial
+
+       Example::
+
+           class UserSlot(Slot):
+               def initialize(self,*args,**kwargs):
+                   self.attr = kwargs.get('attr',None)
+
+               def slot(self, result):
+                   ...
+
+       """
+
         self.threads_num = 4
         self.sleep = 1
         self.sleep_max = 60
-        self.db = MongoClient('localhost', 27017)['db_mq']
+        if self.debug:
+            self.db = MongoClient('localhost', 27017)['db_mq_dev']
+        else:
+            self.db = MongoClient('localhost', 27017)['db_mq_pro']
 
 
     def __enter__(self):
@@ -26,7 +43,7 @@ class Slot(comb.slot.Slot):
 
 
     def slot(self, result):
-        print "call slot,current id is:", result
+        print "call slot,current mongo-id is:", result
         pass
 
 

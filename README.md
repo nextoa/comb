@@ -35,9 +35,10 @@ Comb is a framework use to simply develop threads program.
 
 ### Create Slot
 
-you can find the demo at : INSTALL_PATH/comb/demo/*.py
+you can find the demo at : Install_PATH/comb/demo/*.py
 
-I will write document as soon as possible.
+#### handle with fix-list-data 
+[list](http://)
 
 ### Run
 ####  use `--root` option
