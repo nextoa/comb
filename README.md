@@ -31,25 +31,27 @@ Comb is a framework use to simply develop threads program.
 
 
 
-## Howto use comb
+## How to use comb
 
-### Create Slot
+### Create A Slot
 
 you can find the demo at : Install_PATH/comb/demo/*.py
 
-#### handle with fix-list-data 
-[list](http://)
+#### [List Data](https://github.com/kbonez/comb/blob/master/comb/demo/list.py)
+#### [Mongo MQ](https://github.com/kbonez/comb/blob/master/comb/demo/mongo.py)
+#### [Mongo MQ garbage](https://github.com/kbonez/comb/blob/master/comb/demo/garbage.py)
+
+
 
 ### Run
+####  Quick view
+	comb   comb.demo.list
 ####  use `--root` option
 	comb --root root-path  slot-package.slot-module
 
 #### with SLOTPATH(Plan)
-	export SLOTPATH && comb slot-package.slot-module
+	export SLOTPATH='USER-PATH' && comb slot-package.slot-module
 		 
-
-## Feature Plan
-- document for demo
 
 
 ## Developer

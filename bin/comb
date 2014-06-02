@@ -13,6 +13,9 @@ def useage():
     Global:
     --root                          find package.module in root path,it will search SLOTPATH first
 
+    More:
+    You can view https://github.com/kbonez/comb/blob/master/README.md 'How to use comb' to get more info.
+
     '''
 
 
