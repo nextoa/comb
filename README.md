@@ -8,10 +8,10 @@ Comb is a framework use to simply develop threads program.
 
 ## INSTALL
 
-### DEPENDS
+### Requirement
 
 
-- Python2.7(I haven't test on other version.If you work it on other version success,let me know)
+- Python2.7(I haven't test on other version.If you success work it on other version,let me know)
 - [Optional] 
 	- Mongo
 	- Redis(Plan)
@@ -19,11 +19,15 @@ Comb is a framework use to simply develop threads program.
 
 
 
+### Install from pypi
+
+	sudo pip install comb
+
+
 ### Install from source
 
 	git clone git@github.com:kbonez/comb.git
-	cd comb
-	sudo python setup.py install
+	cd comb && sudo python setup.py install
 
 
 
@@ -36,18 +40,14 @@ you can find the demo at : comb/demo/*.py
 I will write document as soon as possible.
 
 ### Run
+#### with SLOTPATH(Plan)
 
-	cd YOUR-SLOT-SAVE-PATH
-	comb slot-package.slot-module
+	export SLOTPATH && comb slot-package.slot-module
+		 
+####  use `--root` option(Plan)
+	comb --root root-path  slot-package.slot-module
+		 
 
-
-
-## Developer
-[Breeze.Kay](mailto:wangwenpei@kbonez.com)
-
-## Planning-Featrue
-
-- support `--root` option,could be call `comb module` directly
 
 
 ## Developer

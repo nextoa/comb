@@ -3,3 +3,5 @@ test
 *.pyc
 */*.pyc
 build
+dist/
+MANIFEST
