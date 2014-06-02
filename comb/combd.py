@@ -1,8 +1,17 @@
 # -*- coding: utf-8 -*-
 
-import os, sys
+import os, sys,signal
 from threading import Thread
 from time import sleep
+
+
+
+def signal_handle(signum, frame):
+    print "\nUser interrupt.\n"
+    sys.exit(1)
+
+signal.signal(signal.SIGINT, signal_handle)
+
 
 
 def worker(iterator):
@@ -35,6 +44,9 @@ class Start(object):
                 t.daemon = True
                 t.start()
                 i += 1
+
+            while True:
+                sleep(1)
 
 
 class Touch(object):

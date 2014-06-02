@@ -49,7 +49,6 @@ I will write document as soon as possible.
 
 ## Feature Plan
 - document for demo
-- catch KeyboardInterrupt
 
 
 ## Developer

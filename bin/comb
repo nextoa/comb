@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import os, sys, signal
+import os, sys
 import comb.combd
 import importlib
 
