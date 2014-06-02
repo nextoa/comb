@@ -6,12 +6,13 @@ import importlib
 
 
 def useage():
-    print "Useage", os.path.basename(sys.argv[0]), ''' [--root packages-root] [touch] slot-package.slot-module
+    print "Useage", os.path.basename(sys.argv[0]), ''' [--root packages-root]  slot-package.slot-module
 
     slot-package.slot-module        same as python package.module.@note:this must be last argument.
 
     Global:
     --root                          find package.module in root path,it will search SLOTPATH first
+    --debug                         open debug flag
 
     More:
     You can view https://github.com/kbonez/comb/blob/master/README.md 'How to use comb' to get more info.
@@ -40,6 +41,7 @@ try:
     # sys.exit(1)
     sys.path.append(os.path.realpath(runtime_path))
 
+
 except:
     pass
 
@@ -53,13 +55,15 @@ if sys.argv.__len__() < 2 or module_name[:1] == '-' or root_pos+1 == sys.argv.__
     sys.exit(0)
 
 
-print module_name
 
-try:
+if _debug:
     current_module = importlib.import_module(module_name)
-except:
-    print "can't find slot-module `",module_name,"`,please check it."
-    sys.exit(-1)
+else:
+    try:
+        current_module = importlib.import_module(module_name)
+    except:
+        print "load slot-module `",module_name,"`,fail, you can set --debug option to check it.@Note:make sure slot-module is last argument."
+        sys.exit(-1)
 
 
 
