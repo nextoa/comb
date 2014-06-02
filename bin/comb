@@ -11,7 +11,7 @@ def useage():
     slot-package.slot-module        same as python package.module
 
     Global:
-    --root                          find package.module in root path,it will search COMBPATH first
+    --root                          find package.module in root path,it will search SLOTPATH first
 
     '''
 
@@ -25,27 +25,35 @@ if '--debug' in sys.argv:
     _debug = True
 
 
-user_path = []
+runtime_path=user_path=None
 
-if '--root' in sys.argv:
-    user_path.append()
+try:
+    root_pos = sys.argv.index('--root')
+    runtime_path = sys.argv[root_pos+1] if root_pos+1 < sys.argv.__len__()-1 else None
+
+    # @todo set python path
+    # print os.getenv('SLOTPATH')
+    # sys.exit(1)
+    sys.path.append(os.path.realpath(runtime_path))
+
+except:
+    pass
+
+
 
 
 module_name = sys.argv[-1]
-
 
 if sys.argv.__len__() < 2 or module_name[:1] == '-':
     print "illegal option,use -h to get help."
     sys.exit(0)
 
+try:
+    current_module = importlib.import_module(module_name)
+except:
+    print "can't find slot-module `",module_name,"`,please check it."
+    sys.exit(-1)
 
-
-# @todo set python path
-# print os.getenv('SLOTPATH')
-# sys.exit(1)
-
-
-current_module = importlib.import_module(module_name)
 
 
 if __name__ == '__main__':

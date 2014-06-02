@@ -35,17 +35,16 @@ Comb is a framework use to simply develop threads program.
 
 ### Create Slot
 
-you can find the demo at : comb/demo/*.py
+you can find the demo at : INSTALL_PATH/comb/demo/*.py
 
 I will write document as soon as possible.
 
 ### Run
-#### with SLOTPATH(Plan)
-
-	export SLOTPATH && comb slot-package.slot-module
-		 
-####  use `--root` option(Plan)
+####  use `--root` option
 	comb --root root-path  slot-package.slot-module
+
+#### with SLOTPATH(Plan)
+	export SLOTPATH && comb slot-package.slot-module
 		 
 
 
