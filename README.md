@@ -35,7 +35,7 @@ Comb is a framework use to simply develop threads program.
 
 ### Create A Slot
 
-A legal slot at least contain four method:
+A legal slot must be named 'Slot' in your module.py file and it must be at least contain four method:
 
 - initialize
 	
