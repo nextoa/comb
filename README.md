@@ -42,7 +42,7 @@ A legal slot must be named 'Slot' in your module file and it must be at least co
 	 	
 - `__enter__ ` 
 
-	get next data to deal
+	get next data to do
 
 - `slot`
 
@@ -51,7 +51,7 @@ A legal slot must be named 'Slot' in your module file and it must be at least co
 
 - `__exit__`
 
-	after slot deal, call this method
+	when slot finished, call this method
 	
 
 
