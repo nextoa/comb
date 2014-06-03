@@ -1,7 +1,7 @@
 Comb
 ============
 
-simply and high-performance hook for develop threads program
+A simply and high-performance framework for create concurrent program
 
 
 
