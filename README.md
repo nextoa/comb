@@ -52,13 +52,17 @@ you can find the demo at : Install_PATH/comb/demo/*.py
 #### with SLOTPATH(Plan)
 	export SLOTPATH='USER-PATH' && comb slot-package.slot-module
 		 
+### How to work
+![comb sketch](https://github.com/kbonez/comb/blob/master/docs/sketch.png "Sketch")
+		 
 
+## LICENSE
+We use [MIT](http://opensource.org/licenses/MIT) License.
 
 ## Developer
 [Breeze.Kay](mailto:wangwenpei@kbonez.com)
 
-## LICENSE
-We use [MIT](http://opensource.org/licenses/MIT) License.
+
 
 
 
