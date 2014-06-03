@@ -77,8 +77,16 @@ you can find the demo at : Install_PATH/comb/demo/*.py
 ![comb sketch](https://raw.githubusercontent.com/kbonez/comb/master/docs/sketch.png "Sketch")
 
 
+
+## Note
+****For production deployment,You'd better make comb process number equals your cpu core number.****
+
+
+
+
 ## TODO
-- recode comb support to recognise standard user input
+- rebuild comb parse argument process
+- support python multiprocessing implement
 
 ## LICENSE
 We use [MIT](http://opensource.org/licenses/MIT) License.
