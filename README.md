@@ -75,7 +75,7 @@ you can find the demo at : Install_PATH/comb/demo/*.py
 	export SLOTPATH='USER-PATH' && comb slot-package.slot-module
 		 
 ### How to work
-![comb sketch](https://github.com/kbonez/comb/blob/master/docs/sketch.png "Sketch")
+![comb sketch](https://raw.githubusercontent.com/kbonez/comb/master/docs/sketch.png "Sketch")
 
 
 ## TODO
