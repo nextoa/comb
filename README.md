@@ -76,7 +76,10 @@ you can find the demo at : Install_PATH/comb/demo/*.py
 		 
 ### How to work
 ![comb sketch](https://github.com/kbonez/comb/blob/master/docs/sketch.png "Sketch")
-		 
+
+
+## TODO
+- recode comb support to recognise standard user input
 
 ## LICENSE
 We use [MIT](http://opensource.org/licenses/MIT) License.
