@@ -35,6 +35,28 @@ Comb is a framework use to simply develop threads program.
 
 ### Create A Slot
 
+A legual slot at least container four method:
+
+- initialize
+	
+	initial resource, e.g: database handle
+	 	
+- __enter__  
+
+	get next data to deal
+
+- slot
+
+	custom-code
+
+
+- __exit__
+
+	after slot deal, call this method
+	
+
+
+
 you can find the demo at : Install_PATH/comb/demo/*.py
 
 #### [List Data](https://github.com/kbonez/comb/blob/master/comb/demo/list.py)
