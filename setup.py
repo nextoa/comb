@@ -2,11 +2,11 @@ from distutils.core import setup
 
 setup(
     name='comb',
-    version='0.8.11',
+    version='0.8.12',
     packages=['comb', 'comb.mq', 'comb.demo'],
     scripts=['bin/comb'],
     url='https://github.com/kbonez/comb',
-    download_url = 'https://github.com/kbonez/comb/tarball/0.8.11',
+    download_url = 'https://github.com/kbonez/comb/tarball/0.8.12',
     license='http://opensource.org/licenses/MIT',
     author='Breeze.Kay',
     author_email='wangwenpei@kbonez.com',
