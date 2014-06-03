@@ -36,20 +36,20 @@ simply and high-performance hook for develop threads program
 
 A legal slot must be named 'Slot' in your module file and it must be at least contain four method:
 
-- initialize
+- `initialize`
 	
 	initial resource, e.g: database handle
 	 	
-- __enter__  
+- `__enter__ ` 
 
 	get next data to deal
 
-- slot
+- `slot`
 
 	custom-code
 
 
-- __exit__
+- `__exit__`
 
 	after slot deal, call this method
 	
