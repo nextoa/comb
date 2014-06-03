@@ -35,7 +35,7 @@ Comb is a framework use to simply develop threads program.
 
 ### Create A Slot
 
-A legual slot at least container four method:
+A legal slot at least contain four method:
 
 - initialize
 	
