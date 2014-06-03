@@ -1,8 +1,7 @@
 Comb
 ============
 
-
-Comb is a framework use to simply develop threads program.
+simply and high-performance hook for develop threads program
 
 
 
