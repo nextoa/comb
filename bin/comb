@@ -3,58 +3,50 @@
 import os, sys
 import comb.combd
 import importlib
+from cliez.loader import ArgLoader
+
+useage = (
+    "Useage  comb [--root packages-root]  slot-package.slot-module",
+    "",
+    "   slot-package.slot-module        same as python package.module",
+    "Options:",
+    ("--root:", "find package.module in root path"),
+    ("--help", "print help document", '-h'),
+    ("--debug", "debug mode"),
+    "More:",
+    "You can view https://github.com/kbonez/comb/blob/master/README.md 'How to use comb' to get more info."
+)
+
+a = ArgLoader(options=useage)
 
 
-def useage():
-    print "Useage", os.path.basename(sys.argv[0]), ''' [--root packages-root]  slot-package.slot-module
-
-    slot-package.slot-module        same as python package.module.@note:this must be last argument.
-
-    Global:
-    --root                          find package.module in root path,it will search SLOTPATH first
-    --debug                         open debug flag
-
-    More:
-    You can view https://github.com/kbonez/comb/blob/master/README.md 'How to use comb' to get more info.
-
-    '''
-
-
-if '-h' in sys.argv or '--help' in sys.argv:
-    useage()
+if a.options['--help'] is True:
+    print a
     sys.exit(0)
 
 _debug = False
-if '--debug' in sys.argv:
+if a.options['--debug'] is True:
     _debug = True
 
+runtime_path = a.options['--root']
 
-runtime_path=user_path=None
-
-root_pos = -1
-try:
-    root_pos = sys.argv.index('--root')
-    runtime_path = sys.argv[root_pos+1] if root_pos+1 < sys.argv.__len__()-1 else None
-
-    # @todo set python path
-    # print os.getenv('SLOTPATH')
-    # sys.exit(1)
+if runtime_path:
     sys.path.append(os.path.realpath(runtime_path))
 
+user_path = os.getenv('SLOTPATH')
+if user_path:
+    user_path_list = user_path.split(':')
+    for path in user_path_list:
+        sys.path.append(os.path.realpath(path))
 
+
+
+
+try:
+    module_name = a.argv[1]
 except:
-    pass
-
-
-
-
-module_name = sys.argv[-1]
-
-if sys.argv.__len__() < 2 or module_name[:1] == '-' or root_pos+1 == sys.argv.__len__()-1:
-    print "illegal option,use -h to get help."
-    sys.exit(0)
-
-
+    print "illegal option,please set your slot-module-path,use -h to get help."
+    sys.exit(1)
 
 if _debug:
     current_module = importlib.import_module(module_name)
@@ -62,10 +54,8 @@ else:
     try:
         current_module = importlib.import_module(module_name)
     except:
-        print "load slot-module `",module_name,"`,fail, you can set --debug option to check it.@Note:make sure slot-module is last argument."
+        print "load slot-module `", module_name, "`,fail, you can set --debug option to check it."
         sys.exit(-1)
-
-
 
 if __name__ == '__main__':
     comb.combd.Start(current_module.Slot, **{'debug': _debug})
