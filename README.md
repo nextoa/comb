@@ -84,7 +84,6 @@ you can find the demo at : Install_PATH/comb/demo/*.py
 
 
 ## TODO
-- rebuild comb parse argument process
 - support python multiprocessing implement
 
 ## LICENSE
