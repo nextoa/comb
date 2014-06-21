@@ -1,7 +1,7 @@
 Comb
 ============
 
-A simply and high-performance framework for create concurrent program
+A simple and high-performance framework for create concurrent program
 
 
 
