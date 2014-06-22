@@ -31,7 +31,7 @@ A simple and high-performance framework for create parallel program
 
 ## How to use comb
 
-### Create A Slot
+### Create Slot
 
 A legal slot must be named 'Slot' in your module file and it must be at least contain four method:
 
