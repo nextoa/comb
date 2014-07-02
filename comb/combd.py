@@ -43,7 +43,7 @@ class Start(object):
             i = 0
             while i < threads_num:
                 t = Thread(target=worker, args=[iterator])
-                t.daemon = True
+                t.daemon = False
                 t.start()
                 i += 1
 
