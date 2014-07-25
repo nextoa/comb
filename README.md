@@ -95,8 +95,8 @@ We use [MIT](http://opensource.org/licenses/MIT) License.
 
 ## Release-Note
 
-- v0.8.32
-    - add `--threads`, `--sleep`, `--sleep_max` options, this is compatibility for old version
+###v0.8.32
+- add `--threads`, `--sleep`, `--sleep_max` options, this is compatibility for old version
 
 
 
