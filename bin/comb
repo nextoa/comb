@@ -11,8 +11,14 @@ useage = (
     "   slot-package.slot-module        same as python package.module",
     "Options:",
     ("--root:", "find package.module in root path"),
+    "",
+    ("--sleep:", "set sleep time,default is 2s."),
+    ("--sleep_max:", "set max sleep time, default is 60s."),
+    ("--threads:", "set slot threads num,default is 10."),
+    "",
     ("--help", "print help document", '-h'),
     ("--debug", "debug mode"),
+
     "More:",
     "You can view https://github.com/kbonez/comb/blob/master/README.md 'How to use comb' to get more info."
 )
@@ -57,8 +63,15 @@ else:
         print "load slot-module `", module_name, "`,fail, you can set --debug option to check it."
         sys.exit(-1)
 
+
+_threads_num = int(a.options['--threads']) if a.options['--threads'] else 10
+_sleep = int(a.options['--sleep']) if a.options['--sleep'] else 2
+_sleep_max = int(a.options['--sleep_max']) if a.options['--sleep_max'] else 60
+
+
+
 if __name__ == '__main__':
-    comb.combd.Start(current_module.Slot, **{'debug': _debug})
+    comb.combd.Start(current_module.Slot, **{'debug': _debug,'threads_num':_threads_num,'sleep':_sleep,'sleep_max':_sleep_max})
 
 
 

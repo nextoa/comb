@@ -5,9 +5,11 @@ import comb.slot
 
 class Slot(comb.slot.Slot):
     def initialize(self):
-       self.threads_num = 4
-       self.sleep = 1
-       self.sleep_max = 60
+       # self.threads_num = 4     #uncomment this will override --threads option
+       # self.sleep = 1           #uncomment this will override --sleep option
+       # self.sleep_max = 60      #uncomment this will ovveride --sleep_max option
+
+
 
        if self.debug:               #debug flag
            self.todo_list = range(1000, 2000)

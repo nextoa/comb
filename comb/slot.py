@@ -2,9 +2,10 @@
 
 class Slot(object):
     def __init__(self,combd):
-        self.threads_num = 2
-        self.sleep = 2
-        self.sleep_max = 60
+        #@note if you want to fix threads_num, set it in initialize,not here
+        self.threads_num = combd.threads_num
+        self.sleep = combd.sleep
+        self.sleep_max = combd.sleep_max
         self.debug=combd.debug
         self.initialize()
 

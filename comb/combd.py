@@ -35,6 +35,10 @@ class Start(object):
     def __init__(self, slot, *args, **kwargs):
 
         self.debug = kwargs.get('debug', False)
+        self.threads_num = kwargs.get('threads_num', 10)
+        self.sleep_max = kwargs.get('sleep_max', 60)
+        self.sleep = kwargs.get('sleep', 2)
+
 
         if slot:
             iterator = slot(self)
