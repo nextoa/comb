@@ -95,6 +95,10 @@ We use [MIT](http://opensource.org/licenses/MIT) License.
 
 ## Release-Note
 
+###v0.9.0
+- change comb script install path
+
+
 ###v0.8.32
 - add `--threads`, `--sleep`, `--sleep_max` options, this is compatibility for old version
 
