@@ -83,6 +83,11 @@ A legal slot must be named 'Slot' in your module file and it must be at least co
 
     when slot finished, call this method
 
+* `options` (optional,static method)
+
+    define custom options,we use `cliez <http://cliez.kbonez.com>`_ as parser.
+
+
 
 Slot Demo
 ---------------
