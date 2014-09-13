@@ -7,6 +7,8 @@ class Slot(object):
         self.sleep = combd.sleep
         self.sleep_max = combd.sleep_max
         self.debug=combd.debug
+        self.combd=combd
+
         self.initialize()
 
 
@@ -41,3 +43,11 @@ class Slot(object):
         pass
 
 
+    # @staticmethod
+    # def options():
+    #     """
+    #     replace this method for custom-defined method
+    #     :return:
+    #     """
+    #     return ()
+    #     pass

@@ -1,22 +1,20 @@
 # -*- coding: utf-8 -*-
 
-import os, sys,signal
+import os, sys, signal
 from threading import Thread
 from time import sleep
-
 
 
 def signal_handle(signum, frame):
     print "\nUser interrupt.\n"
     sys.exit(1)
 
-signal.signal(signal.SIGINT, signal_handle)
 
+signal.signal(signal.SIGINT, signal_handle)
 
 
 def worker(iterator):
     time = iterator.sleep
-    # iterator.beforePoll()
 
     while True:
         with iterator as result:
@@ -24,36 +22,39 @@ def worker(iterator):
                 iterator.slot(result)
                 time = iterator.sleep
             else:
-                time += iterator.sleep
-                if time > iterator.sleep_max:
-                    time = iterator.sleep
-                #@todo add Logger
-                sleep(time)
-
+                if iterator.combd.once is False:
+                    time += iterator.sleep
+                    if time > iterator.sleep_max:
+                        time = iterator.sleep
+                    # @todo add Logger
+                    sleep(time)
+                else:
+                    sys.exit(0)
 
 class Start(object):
-    def __init__(self, slot, *args, **kwargs):
+    def __init__(self, slot, extra_loader={}, debug=False, thread_nums=10, sleep_cycle=2, sleep_max=60,once=False, *args, **kwargs):
 
-        self.debug = kwargs.get('debug', False)
-        self.threads_num = kwargs.get('threads_num', 10)
-        self.sleep_max = kwargs.get('sleep_max', 60)
-        self.sleep = kwargs.get('sleep', 2)
+        self.debug = debug
+        self.threads_num = thread_nums
+        self.sleep_max = sleep_max
+        self.sleep = sleep_cycle
+        self.extra_loader = extra_loader
+        self.once = once
 
 
         if slot:
             iterator = slot(self)
-
             threads_num = iterator.threads_num
             i = 0
             while i < threads_num:
                 t = Thread(target=worker, args=[iterator])
-                t.daemon = True
+                if self.once is False:
+                    t.daemon = True
                 t.start()
                 i += 1
 
-            while True:
-                sleep(1)
+            if self.once is False:
+                while True:
+                    sleep(1)
 
 
-class Touch(object):
-    pass

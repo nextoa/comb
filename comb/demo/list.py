@@ -2,26 +2,55 @@
 
 import comb.slot
 
+import sys
+
+from time import sleep
+
 
 class Slot(comb.slot.Slot):
     def initialize(self):
-       # self.threads_num = 4     #uncomment this will override --threads option
-       # self.sleep = 1           #uncomment this will override --sleep option
-       # self.sleep_max = 60      #uncomment this will ovveride --sleep_max option
+        """Hook for initialization.
 
+        This block is execute before thread initial
 
+       Example::
 
-       if self.debug:               #debug flag
-           self.todo_list = range(1000, 2000)
-       else:
-           self.todo_list = range(1, 1000)
+           class UserSlot(Slot):
+               def initialize(self):
+                   ...
 
-       print self.todo_list
+               def slot(self, result):
+                   ...
+
+       """
+
+        if self.combd.extra_loader.actions.get('act1'):
+            print "Catch act1 action, program will exit."
+            sys.exit(0)
+
+        if self.combd.extra_loader.options.get('opt1'):
+            print "Catch opt1 option, program will exit."
+            sys.exit(0)
+
+        if self.debug:  # debug flag
+            self.todo_list = range(1000, 2000)
+            print "You set debug flag,prepare todo_list, from 1000,2000"
+        else:
+            self.todo_list = range(1, 1000)
+            print "prepare todo_list, from 1,1000"
+
+        print "current threads set:%d,cycle is %d,cycle_max is %d" % (self.threads_num, self.sleep, self.sleep_max)
+        print "slot will sleep 5 second."
+        sleep(5)
+        print "slot will pop up todo list.sleep 2 second."
+        sleep(2)
+        print self.todo_list
+
 
 
     def __enter__(self):
         if not self.todo_list:
-            print "todo list is empty,sleep now,this must be return False when no data found."
+            print "Finish,this must be return *False* when no data found."
             return False
         else:
             next = self.todo_list.pop()
@@ -29,13 +58,33 @@ class Slot(comb.slot.Slot):
 
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        print "load after self.slot() call"
+        print "call __exit__"
 
 
     def slot(self, result):
-        print "call slot,current number is:", result
+        print "call slot,found number is:", result
         pass
 
+
+    @staticmethod
+    def options():
+
+        return (
+            "Useage  comb.slot [actions] [options]",
+            "",
+
+            "Actions",
+            ("@act1", "act1 flag,try set it."),
+
+            "Options:",
+            ("--opt1", "set opt1 flag"),
+            "",
+            ("--help", "print help document", '-h'),
+            "More:",
+            "Hi,This is a demo.Useage synax please refer Cliez package."
+        )
+
+    pass
 
 
 

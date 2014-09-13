@@ -2,12 +2,15 @@
 
 
 
-def token(handle):
-    # @todo
+
+
+def push(redis,key,value):
+    return redis.rpush(key,value)
     pass
 
 
-def release(handle):
+def pop(redis,key):
     # @todo
+    return redis.lpop(key)
     pass
 

@@ -4,6 +4,6 @@ test
 */*.pyc
 build
 dist/
-MANIFEST
 doc
 *.egg-info
+_build
