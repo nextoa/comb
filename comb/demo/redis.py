@@ -35,13 +35,13 @@ class Slot(comb.slot.Slot):
 
 
     def __enter__(self):
-        data = RedisHelper.pop(self.db,'mq1','aaaa')
+        data = RedisHelper.push(self.db,'mq1','aaaa')
         if not data:
             return False
         return data['_id']
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        data = RedisHelper.push(self.db,'mq1')
+        data = RedisHelper.pop(self.db,'mq1')
 
 
     def slot(self, result):
