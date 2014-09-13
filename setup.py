@@ -6,7 +6,7 @@ setup(
     version='0.9.0',
     packages=['comb', 'comb.mq', 'comb.demo'],
     install_requires=['cliez'],
-    url='https://github.com/kbonez/comb',
+    url='http://comb.kbonez.com',
     download_url='https://github.com/kbonez/comb/tarball/0.9.0',
     license='http://opensource.org/licenses/MIT',
     author='Breeze.Kay',
