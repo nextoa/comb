@@ -39,7 +39,7 @@ class Slot(object):
         pass
 
 
-    def slot(self):
+    def slot(self,msg):
         pass
 
 
