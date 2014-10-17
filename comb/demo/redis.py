@@ -26,7 +26,7 @@ class Slot(comb.slot.Slot):
 
         if self.extra_loader.options.get('--force1'):
             self.threads_num = 1
-            print "Force thread nums to 1"
+            print("Force thread nums to 1")
 
 
         self.db = redis.Redis()
@@ -45,7 +45,7 @@ class Slot(comb.slot.Slot):
 
 
     def slot(self, result):
-        print "call slot,current data is:", result
+        print("call slot,current data is:", result)
         pass
 
 

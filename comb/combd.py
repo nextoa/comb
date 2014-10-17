@@ -4,9 +4,18 @@ import os, sys, signal
 from threading import Thread
 from time import sleep
 
+import threading
+
+
+
 
 def signal_handle(signum, frame):
-    print "\nUser interrupt.\n"
+    print(threading.activeCount())
+    print(threading.current_thread().name)
+
+    print(threading.Condition())
+
+    print("\nUser interrupt.\n")
     sys.exit(1)
 
 

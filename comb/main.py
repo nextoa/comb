@@ -30,8 +30,8 @@ def main():
     a = ArgLoader(options=useage)
 
     # call comb help manual
-    if a.options['--help'] is True and a.argv.__len__() == 1:
-        print a
+    if a.options['--help'] is True and len(a.argv) == 1:
+        print(a)
         sys.exit(0)
 
     _debug = False
@@ -52,7 +52,7 @@ def main():
     try:
         module_name = a.argv[1]
     except:
-        print "illegal option,please set your slot-module-path,use -h to get help."
+        print("illegal option,please set your slot-module-path,use -h to get help.")
         sys.exit(1)
 
     if _debug:
@@ -61,7 +61,7 @@ def main():
         try:
             current_module = importlib.import_module(module_name)
         except:
-            print "load slot-module `", module_name, "`,fail, you can set --debug option to check it."
+            print("load slot-module `", module_name, "`,fail, you can set --debug option to check it.")
             sys.exit(-1)
 
     _threads_num = int(a.options['--threads']) if a.options['--threads'] else 10
@@ -82,7 +82,7 @@ def main():
 
     # call slot document
     if a.options['--help'] is True and extra_options.__len__():
-        print b
+        print(b)
         sys.exit(0)
 
     comb.combd.Start(current_module.Slot, extra_loader=b, sleep_cycle=_sleep, debug=_debug, sleep_max=_sleep_max,thread_nums=_threads_num,once=_once)

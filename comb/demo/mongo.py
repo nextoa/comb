@@ -43,7 +43,7 @@ class Slot(comb.slot.Slot):
 
 
     def slot(self, result):
-        print "call slot,current mongo-id is:", result
+        print("call slot,current mongo-id is:", result)
         pass
 
 
