@@ -8,6 +8,14 @@ Comb
 
 Upgrade notes
 -------------
+* Version 0.9.2
+    - support safe quit for user interrupt.
+
+
+* Version 0.9.1
+    - support python3
+
+
 
 * Version 0.9.0
     - Add ``--once`` option. execute once and exit instead of wait.
@@ -82,11 +90,6 @@ A legal slot must be named 'Slot' in your module file and it must be at least co
 * `__exit__`
 
     when slot finished, call this method
-
-* `options` (optional,static method)
-
-    define custom options,we use `cliez <http://cliez.kbonez.com>`_ as parser.
-
 
 
 Slot Demo
