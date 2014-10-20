@@ -8,6 +8,14 @@ Comb
 
 Upgrade notes
 -------------
+* Version 0.9.2
+    - support safe quit for user interrupt.
+
+
+* Version 0.9.1
+    - support python3
+
+
 
 * Version 0.9.0
     - Add ``--once`` option. execute once and exit instead of wait.

@@ -15,11 +15,11 @@ class Slot(mongo.Slot):
 
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        print "exit(),nothing to do"
+        print("exit(),nothing to do")
 
 
     def slot(self, result):
-        print "this code is used to clean old-queue-data from demo/mongo.py"
+        print("this code is used to clean old-queue-data from demo/mongo.py")
         pass
 
 

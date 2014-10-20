@@ -6,6 +6,8 @@ import sys
 
 from time import sleep
 
+import threading
+
 
 class Slot(comb.slot.Slot):
     def initialize(self):
@@ -25,32 +27,40 @@ class Slot(comb.slot.Slot):
        """
 
         if self.combd.extra_loader.actions.get('act1'):
-            print "Catch act1 action, program will exit."
+            print("Catch act1 action, program will exit.")
             sys.exit(0)
 
         if self.combd.extra_loader.options.get('opt1'):
-            print "Catch opt1 option, program will exit."
+            print("Catch opt1 option, program will exit.")
             sys.exit(0)
 
         if self.debug:  # debug flag
-            self.todo_list = range(1000, 2000)
-            print "You set debug flag,prepare todo_list, from 1000,2000"
-        else:
-            self.todo_list = range(1, 1000)
-            print "prepare todo_list, from 1,1000"
 
-        print "current threads set:%d,cycle is %d,cycle_max is %d" % (self.threads_num, self.sleep, self.sleep_max)
-        print "slot will sleep 5 second."
-        sleep(5)
-        print "slot will pop up todo list.sleep 2 second."
+            if sys.version_info[0] == 2:
+                self.todo_list = range(1000, 2000)
+            else:
+                self.todo_list = list(range(1000, 2000))
+            print("You set debug flag,prepare todo_list, from 1000,2000")
+        else:
+            if sys.version_info[0] == 2:
+                self.todo_list = range(1, 1000)
+            else:
+                self.todo_list = list(range(1, 1000))
+
+            print("prepare todo_list, from 1,1000")
+
+        print("current threads set:%d,cycle is %d,cycle_max is %d" % (self.threads_num, self.sleep, self.sleep_max))
+        print("slot start now,will sleep 2 second.")
         sleep(2)
-        print self.todo_list
+        print("slot will pop up todo list.sleep 2 second.")
+        sleep(2)
+        print(self.todo_list)
 
 
 
     def __enter__(self):
         if not self.todo_list:
-            print "Finish,this must be return *False* when no data found."
+            print("Finish,this must be return *False* when no data found.")
             return False
         else:
             next = self.todo_list.pop()
@@ -58,11 +68,18 @@ class Slot(comb.slot.Slot):
 
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        print "call __exit__"
+        print("call __exit__")
 
 
     def slot(self, result):
-        print "call slot,found number is:", result
+        print("call slot,found number is:", result)
+
+        if self.combd.extra_loader.options.get('opt1'):
+            pass
+
+
+
+
         pass
 
 

@@ -30,12 +30,12 @@ class Slot(object):
         pass
 
     def __enter__(self):
-        print "You should overwrite __enter__ method by subclass"
+        print("You should overwrite __enter__ method by subclass")
         return False
 
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        print "You should overwrite __exit__ method by subclass"
+        print("You should overwrite __exit__ method by subclass")
         pass
 
 
