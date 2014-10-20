@@ -6,6 +6,8 @@ import sys
 
 from time import sleep
 
+import threading
+
 
 class Slot(comb.slot.Slot):
     def initialize(self):

@@ -8,6 +8,10 @@ Comb
 
 Upgrade notes
 -------------
+* Version 0.9.2
+    - support safe quit for user interrupt.
+
+
 * Version 0.9.1
     - support python3
 
