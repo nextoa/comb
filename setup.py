@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='comb',
-    version='0.9.1',
+    version='0.9.2',
     packages=['comb', 'comb.mq', 'comb.demo'],
     install_requires=['cliez'],
     url='http://comb.kbonez.com',
