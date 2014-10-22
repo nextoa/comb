@@ -9,6 +9,9 @@ Comb
 Upgrade notes
 -------------
 
+* Version 0.9.4
+    - change ``--sleep`` data type to float in python3.
+
 * Version 0.9.3
     - update document
     - improve setup.py file

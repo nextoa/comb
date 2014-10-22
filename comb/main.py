@@ -77,7 +77,12 @@ def main():
 
     # set default value
     _threads_num = int(a.options['--threads']) if a.options['--threads'] else 10
-    _sleep = int(a.options['--sleep']) if a.options['--sleep'] else 2
+
+    if sys.version_info < (3,0):
+        _sleep = int(a.options['--sleep']) if a.options['--sleep'] else 2
+    else:
+        _sleep = float(a.options['--sleep']) if a.options['--sleep'] else 2
+
     _sleep_max = int(a.options['--sleep-max']) if a.options['--sleep-max'] else 60
     _once = a.options['--once'] if a.options['--once'] else False
 
