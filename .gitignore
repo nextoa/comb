@@ -7,3 +7,5 @@ dist/
 doc
 *.egg-info
 _build
+fabfile.py
+config

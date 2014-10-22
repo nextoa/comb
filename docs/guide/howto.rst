@@ -1,39 +1,3 @@
-Comb
-==================
-
-`comb <http://comb.kbonez.com>`_ , A simple and high-performance framework for create parallel program
-
-
-
-
-Upgrade notes
--------------
-
-* Version 0.9.3
-    - update document
-    - improve setup.py file
-
-* Version 0.9.2
-    - support safety user interrupt.
-
-* Version 0.9.1
-    - support python3
-
-* Version 0.9.0
-    - Add ``--once`` option. execute once and exit instead of wait.
-    - As of Comb 0.8.99, we change  ``--sleep_max`` option to ``--sleep-max``.
-    - change comb script install path,use python library path instead /usr/local/bin
-
-
-Quick links
------------
-
-* `Documentation <http://comb.kbonez.com/>`_
-* `Source (github) <https://github.com/kbonez/comb>`_
-
-
-
-
 Installation
 ------------
 
@@ -72,20 +36,21 @@ To use comb, you should create a python module file. we named *slot*.
 
 A legal slot must be named 'Slot' in your module file and it must be at least contain four method:
 
-* `initialize`
+
+* initialize
 
     initial resource, e.g: database handle
 
-* `__enter__ `
+* __enter__
 
     get next data to do,you can fetch one or more data.
 
-* `slot`
+* slot
 
     user custom code
 
 
-* `__exit__`
+* __exit__
 
     when slot finished, call this method
 
@@ -113,7 +78,7 @@ Start
 
     comb --root SLOT_ROOT_PATH  slot-package.slot-module
 
-  if you set `SLOTPATH` environment, you can use::
+  if you set **SLOTPATH** environment, you can use::
 
     comb slot-package.slot-module
 
@@ -124,16 +89,12 @@ Start
 this will execute the `Deal List Demo <https://github.com/kbonez/comb/blob/master/comb/demo/list.py>`_
 
 
-Note for production deployment
+
+Note
 ---------------------------------------------
 
 * You'd better make comb process number equals your cpu core number.
 
 * We strongly recommend you use comb with `supervisor <http://supervisord.org/>`_
-
-
-
-
-
 
 

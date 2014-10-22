@@ -11,4 +11,10 @@ def release(collection, token='token'):
 
 
 def garbage(collection, token='token'):
+    """
+    garbage for mongo message queue
+    :param collection:
+    :param token:
+    :return:
+    """
     collection.remove({token: False}, multi=True)

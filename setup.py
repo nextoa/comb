@@ -1,13 +1,14 @@
 from setuptools import setup
 
+import comb
 
 setup(
     name='comb',
-    version='0.9.2',
+    version=comb.version,
     packages=['comb', 'comb.mq', 'comb.demo'],
     install_requires=['cliez'],
     url='http://comb.kbonez.com',
-    download_url='https://github.com/kbonez/comb/tarball/0.9.0',
+    download_url='https://github.com/kbonez/comb/tarball/'+comb.version,
     license='http://opensource.org/licenses/MIT',
     author='Breeze.Kay',
     author_email='wangwenpei@kbonez.com',

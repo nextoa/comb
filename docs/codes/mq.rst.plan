@@ -1,0 +1,18 @@
+``comb.mq.*`` --- message queue helper function
+===================================================
+
+.. automodule:: comb.mq.mongo
+
+   get message data
+   ----------------------
+   .. autofunction::token
+
+   mark message data to done
+   ----------------------------------
+   .. autofunction::release
+
+   clean finished queue data
+   ---------------------------------
+   .. autofunction::garbage
+
+

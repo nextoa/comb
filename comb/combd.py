@@ -77,7 +77,7 @@ class Start(object):
 
             if self.once is False:
                 while True:
-                    if (threading.active_count() > 1):
+                    if threading.active_count() > 1:
                         sleep(1)
                     else:
                         if threading.current_thread().name == "MainThread":
