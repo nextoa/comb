@@ -23,6 +23,10 @@ def set_exist_flag(flag):
 def signal_handle(signum, frame):
     set_exist_flag(True)
     print("\nUser interrupt.Waiting Threads exist.\n")
+
+    if '--debug' in sys.argv:
+        sys.exit(-1)
+
     pass
 
 

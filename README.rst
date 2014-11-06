@@ -9,6 +9,10 @@ Comb
 Upgrade notes
 -------------
 
+
+* Version 0.9.5
+    - User interrupt directly when user specific ``--debug`` option.
+
 * Version 0.9.4
     - change ``--sleep`` data type to float in python3.
 
