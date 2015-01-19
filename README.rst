@@ -1,14 +1,23 @@
 Comb
 ==================
 
-`comb <http://comb.kbonez.com>`_ , A simple and high-performance framework for create parallel program
+.. image:: https://pypip.in/v/comb/badge.svg
+    :target: https://pypi.python.org/pypi/comb/
+.. image:: https://pypip.in/d/comb/badge.svg
+    :target: https://pypi.python.org/pypi/comb/
+.. image:: https://pypip.in/license/comb/badge.svg
+    :target: https://pypi.python.org/pypi/comb/
 
+
+`comb <http://comb.kbonez.com>`_ , A simple and high-performance framework for create parallel program
 
 
 
 Upgrade notes
 -------------
 
+* Version 0.9.6
+    - Add ``--no-daemon`` option.
 
 * Version 0.9.5
     - User interrupt directly when user specific ``--debug`` option.

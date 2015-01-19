@@ -1,6 +1,9 @@
 What's new in Comb 0.9.x
 ===========================
 
+* Version 0.9.6
+    - Add ``--no-daemon`` option.
+
 * Version 0.9.5
     - User interrupt directly when user specific ``--debug`` option.
 

@@ -20,6 +20,7 @@ def main():
         ("--sleep-max:", "set max sleep time, default is 60s."),
         ("--threads:", "set slot threads num,default is 10."),
         ("--once", "execute once and exit."),
+        ("--no-daemon", "set comb works in no daemon mode."),
 
         "",
         ("--help", "print help document", '-h'),
@@ -86,6 +87,9 @@ def main():
     _sleep_max = int(a.options['--sleep-max']) if a.options['--sleep-max'] else 60
     _once = a.options['--once'] if a.options['--once'] else False
 
+    _no_daemon = a.options['--no-daemon'] if a.options['--no-daemon'] else False
+
+
     extra_options = None
 
     if hasattr(current_module.Slot, 'options') and callable(current_module.Slot.options):
@@ -101,7 +105,7 @@ def main():
         print(b)
         sys.exit(0)
 
-    comb.combd.Start(current_module.Slot, extra_loader=b, sleep_cycle=_sleep, debug=_debug, sleep_max=_sleep_max, thread_nums=_threads_num, once=_once)
+    comb.combd.Start(current_module.Slot, extra_loader=b, sleep_cycle=_sleep, debug=_debug, sleep_max=_sleep_max, thread_nums=_threads_num, once=_once,no_daemon=_no_daemon)
 
 
 pass

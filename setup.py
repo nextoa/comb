@@ -11,7 +11,7 @@ setup(
     download_url='https://github.com/kbonez/comb/tarball/'+comb.version,
     license='http://opensource.org/licenses/MIT',
     author='Breeze.Kay',
-    author_email='wangwenpei@kbonez.com',
+    author_email='wangwenpei@nextoa.com',
     description='A simply and high-performance framework for create concurrent program',
     keywords='comb,slot,thread,framework,hook',
     entry_points={

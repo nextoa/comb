@@ -58,7 +58,7 @@ def worker(iterator):
 
 
 class Start(object):
-    def __init__(self, slot, extra_loader={}, debug=False, thread_nums=10, sleep_cycle=2, sleep_max=60, once=False, *args, **kwargs):
+    def __init__(self, slot, extra_loader={}, debug=False, thread_nums=10, sleep_cycle=2, sleep_max=60, once=False, no_daemon=False,*args, **kwargs):
 
 
         self.debug = debug
@@ -67,6 +67,7 @@ class Start(object):
         self.sleep = sleep_cycle
         self.extra_loader = extra_loader
         self.once = once
+        self.no_daemon=no_daemon
 
         if slot:
             iterator = slot(self)
@@ -75,7 +76,11 @@ class Start(object):
             while i < threads_num:
                 t = Thread(target=worker, args=[iterator])
                 if self.once is False:
-                    t.daemon = True
+                    if self.no_daemon:
+                        t.daemon = False
+                    else:
+                        t.daemon = True
+
                 t.start()
                 i += 1
 
