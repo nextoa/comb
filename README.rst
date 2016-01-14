@@ -1,7 +1,11 @@
 Comb
 ==================
 
-`comb <http://comb.nextoa.com>`_ , A simple and high-performance framework for create parallel program
+this project was migrate into `cliez <https://github.com/9nix00/cliez>`_ and stop maintained.
+------------------------------------------------------------------------------------------------------
+
+
+`comb <https://github.com/nextoa/comb>`_ , A simple and high-performance framework for create parallel program
 
 Upgrade notes
 --------------------------
